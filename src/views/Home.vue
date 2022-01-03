@@ -1,18 +1,33 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Modal 
+        :modalActive="modalActive" 
+        class="modal-content"
+    > 
+        <h1>This is a Modal Header</h1> 
+        <p>This is a modal message</p>
+    </Modal>
+    <button @click="toggleModal" type="button">Open Modal</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Modal from '@/components/Modal';
+import {ref} from 'vue';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    Modal
+  },
+  setup () {
+    const modalActive = ref(false);
+    
+    const toggleModal = () => {
+        modalActive.value = !modalActive.value;
+    }
+    
+    return {modalActive, toggleModal};
   }
 }
 </script>
