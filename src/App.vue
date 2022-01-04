@@ -11,4 +11,14 @@
     box-sizing: border-box;
     font-family: 'Karla', sans-serif;;
 }
+
+button {
+    padding: 20px 30px;
+    border: none;
+    font-size: 16px;
+    background-color:crimson;
+    color: #fff;
+    cursor: pointer;   
+}
+
 </style>

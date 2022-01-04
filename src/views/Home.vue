@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <Modal 
+        @close="toggleModal"
         :modalActive="modalActive" 
         class="modal-content"
     > 
@@ -31,3 +32,30 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+    .home {
+        background-color: rgba(0,176,234,0.5);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        
+        h1, p {
+            margin-bottom: 16px;
+        }
+        
+        h1 {
+            font-size: 32px;
+        }
+        
+        p {
+            font-size: 18px;
+        }
+    }
+</style>
